@@ -9,18 +9,16 @@ const SidebarOption = ({ Icon, addChannelOption, title }) => {
 
     if (channelName) {
       db.collection('rooms').add({
-        name: channelName
-      })
+        name: channelName,
+      });
     }
-  }
+  };
 
-  const selectChannel = () => {
-    
-  }
+  const selectChannel = () => {};
 
   return (
     <SidebarOptionContainer
-    onClick={addChannelOption ? addChannel : selectChannel}
+      onClick={addChannelOption ? addChannel : selectChannel}
     >
       {Icon && <Icon fontSize='small' style={{ padding: '10px' }} />}
       {Icon ? (
