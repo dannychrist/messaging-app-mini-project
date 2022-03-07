@@ -1,16 +1,34 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
-const SidebarOption = () => {
+const SidebarOption = ({ Icon, title }) => {
   return (
     <SidebarOptionContainer>
-      
+      {Icon && <Icon fontSize='small' style={{ padding: '10px' }} />}
+      {Icon ? (
+        <h3>{title}</h3>
+      ) : (
+        <SidebarOptionChannel>
+          <span>#</span> {title}
+        </SidebarOptionChannel>
+      )}
     </SidebarOptionContainer>
-  )
-}
+  );
+};
 
-export default SidebarOption
+export default SidebarOption;
 
 const SidebarOptionContainer = styled.div`
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  padding-left: 2px;
+  cursor: pointer;
 
+  :hover {
+    opacity: 0.9;
+    background-color: #340e36;
+  }
 `;
+
+const SidebarOptionChannel = styled.div``;
