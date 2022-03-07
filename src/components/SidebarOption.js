@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { db } from '../firebase';
 
-const SidebarOption = ({ Icon, addChannelOption, title }) => {
+const SidebarOption = ({ Icon, addChannelOption, title, id }) => {
 
   const addChannel = () => {
     const channelName = prompt('Please enter the channel name');
@@ -55,4 +55,7 @@ const SidebarOptionContainer = styled.div`
   }
 `;
 
-const SidebarOptionChannel = styled.div``;
+const SidebarOptionChannel = styled.h3`
+  padding: 10px 0;
+  font-weight: 300;
+`;
