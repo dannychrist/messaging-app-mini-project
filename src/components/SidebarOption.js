@@ -1,9 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SidebarOption = ({ Icon, title }) => {
+const SidebarOption = ({ Icon, addChannelOption, title }) => {
+
+  const addChannel = () => {
+    
+  }
+
+  const selectChannel = () => {
+    
+  }
+
   return (
-    <SidebarOptionContainer>
+    <SidebarOptionContainer
+    onClick={addChannelOption ? addChannel : selectChannel}
+    >
       {Icon && <Icon fontSize='small' style={{ padding: '10px' }} />}
       {Icon ? (
         <h3>{title}</h3>
@@ -28,6 +39,14 @@ const SidebarOptionContainer = styled.div`
   :hover {
     opacity: 0.9;
     background-color: #340e36;
+  }
+
+  > h3 {
+    font-weight: 500;
+  }
+
+  > h3 > span {
+    padding: 15px;
   }
 `;
 
