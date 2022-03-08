@@ -6,12 +6,12 @@ import firebase from 'firebase/compat/app';
 import Barf from '../assets/barf.jpeg';
 
 const ChatInput = (channelName, channelId) => {
-  const [input, setInput] = useState(null);
-
+  const [input, setInput] = useState('');
+  console.log(channelId);
   const sendMessage = (e) => {
     e.preventDefault();
 
-    if (channelId) {
+    if (!channelId) {
       return false;
     }
 
@@ -19,7 +19,7 @@ const ChatInput = (channelName, channelId) => {
       message: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       user: 'Danny Christ',
-      userImage: Barf
+      userImage: Barf,
     });
   };
 

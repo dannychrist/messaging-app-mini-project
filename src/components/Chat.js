@@ -9,8 +9,8 @@ import { selectRoomId } from '../features/appSlice';
 import ChatInput from './ChatInput';
 
 const Chat = () => {
-  // const roomId = useSelector(selectRoomId);
-  // console.log(roomId);
+  const roomId = useSelector(selectRoomId);
+
   return (
     <ChatContainer>
       <>
@@ -28,7 +28,8 @@ const Chat = () => {
           </HeaderRight>
         </Header>
         <ChatMessage></ChatMessage>
-        <ChatInput />
+          <ChatInput channelId={roomId} />
+        
       </>
     </ChatContainer>
   );
