@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import Chat from './components/Chat';
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
           <AppBody>
             <Sidebar />
 
-            <Routes>{/* <Route path='/' exact element={<Chat />} /> */}</Routes>
+            <Routes>
+              <Route path='/' exact element={<Chat />} />
+            </Routes>
           </AppBody>
         </>
       </Router>
