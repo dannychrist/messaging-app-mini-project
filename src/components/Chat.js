@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import { StarBorder as StarBorderIcon } from '@material-ui/icons';
 import { Info as InfoIcon } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
-import { selectRoomId} from '../features/appSlice';
+import { selectRoomId } from '../features/appSlice';
 
 import ChatInput from './ChatInput';
 
 const Chat = () => {
-  const roomId = useSelector(selectRoomId);
+  // const roomId = useSelector(selectRoomId);
+  // console.log(roomId);
   return (
     <ChatContainer>
       <>
@@ -26,12 +27,8 @@ const Chat = () => {
             </p>
           </HeaderRight>
         </Header>
-        <ChatMessage>
-          
-        </ChatMessage>
-        <ChatInput 
-        channelId={roomId}
-        />
+        <ChatMessage></ChatMessage>
+        <ChatInput />
       </>
     </ChatContainer>
   );
@@ -81,6 +78,4 @@ const HeaderRight = styled.div`
   }
 `;
 
-const ChatMessage = styled.div`
-
-`;
+const ChatMessage = styled.div``;
